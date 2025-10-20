@@ -1,0 +1,27 @@
+# Ignore personal and sensitive data
+settings.json
+history.jsonl
+session-*
+debug/
+file-history/
+shell-snapshots/
+statsig/
+todos/
+.DS_Store
+*.log
+
+# Ignore temporary files
+tmp/
+temp/
+*.tmp
+.cache/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+Thumbs.db
+desktop.ini

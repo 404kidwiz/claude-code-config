@@ -1,0 +1,73 @@
+{
+  "cleanupPeriodDays": 14,
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir:*)",
+      "Bash(git clone:*)",
+      "Read(//private/tmp/0xfurai-claude-code-subagents/**)",
+      "Read(//private/tmp/davepoon-claude-code-subagents/**)",
+      "WebSearch",
+      "Bash(crush:*)",
+      "Bash(droid:*)",
+      "Bash(opencode:*)",
+      "Bash(gemini:*)",
+      "Bash(chmod:*)",
+      "Bash(/Users/kidwiz404/.claude/status-line.sh:*)",
+      "Bash(/Users/kidwiz404/.claude/status-line-minimal.sh:*)",
+      "Bash(/Users/kidwiz404/.claude/status-line-ai.sh)",
+      "Bash(/Users/kidwiz404/.claude/track-subagent.sh:*)",
+      "Bash(/Users/kidwiz404/.claude/status-line-with-agents.sh)",
+      "Bash(/Users/kidwiz404/.claude/automation/*)",
+      "Bash(/Users/kidwiz404/.claude/scripts/*)",
+      "Bash(npm:*)",
+      "Bash(pip:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(docker:*)",
+      "Bash(kubectl:*)",
+      "Bash(terraform:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(/Users/kidwiz404/.claude/backup-config.sh)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(sudo:*)",
+      "Bash(chown:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(docker system prune:*)"
+    ],
+    "defaultMode": "default",
+    "additionalDirectories": [
+      "/Users/kidwiz404/Projects",
+      "/Users/kidwiz404/Development",
+      "/Users/kidwiz404/ai-agents"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/kidwiz404/.claude/track-subagent.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/kidwiz404/.claude/status-line-with-agents.sh",
+    "padding": 1
+  },
+  "outputStyle": "technical",
+  "spinnerTipsEnabled": true,
+  "alwaysThinkingEnabled": true
+}
